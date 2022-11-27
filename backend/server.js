@@ -27,6 +27,9 @@ app.use('/api/category', categoryRoute)
 app.use('/api/chat',authMiddleware,chatRoute)
 app.use('/api/message',authMiddleware,messageRoute)
 
+app.get('/', (req, res) => {
+  res.send('API is running....')
+})
 
 app.use(notFound)
 app.use(errorHandler)
